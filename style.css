@@ -1,0 +1,98 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0e5ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Ocultar los radio buttons reales */
+input[type="radio"] {
+    display: none;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* El cuadro que cambiará de color */
+.cuadro {
+    background-color: #ffffff; /* Color por defecto */
+    border-radius: 15px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease; /* Transición suave de colores */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Ocultar todos los mensajes por defecto */
+.texto span {
+    display: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Estilos de los botones (Labels) */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.botones label {
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid transparent;
+    transition: transform 0.2s;
+}
+
+.botones label:hover {
+    transform: scale(1.05);
+}
+
+.btn-blanco { background: #f0f0f0; color: #333; border: 2px solid #ccc !important; }
+.btn-negro { background: #333; color: #fff; }
+.btn-verde { background: #2ecc71; color: #fff; }
+
+
+
+#Blanco:checked ~ .cuadro {
+    background-color: #ffffff;
+    color: #333;
+}
+#Blanco:checked ~ .cuadro .mensaje-blanquito {
+    display: block; 
+}
+
+/* Si NEGRO está seleccionado */
+#negro:checked ~ .cuadro {
+    background-color: #222222;
+    color: #ffffff;
+}
+#negro:checked ~ .cuadro .mensaje-negro {
+    display: block; /* Muestra el texto de negro */
+}
+
+/* Si VERDE está seleccionado */
+#verde:checked ~ .cuadro {
+    background-color: #2ecc71;
+    color: #ffffff;
+}
+#verde:checked ~ .cuadro .mensaje-verde {
+    display: block; /* Muestra el texto de verde */
+}
